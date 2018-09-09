@@ -1,1 +1,1 @@
-# Poslovnainformatika
+# Poslovna informatika projekat

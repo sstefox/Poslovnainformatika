@@ -1,0 +1,25 @@
+<form [formGroup]="registerForm">
+  <div>
+      <label>Naziv klijenta</label><br>
+      <input type="text" formControlName="naziv">
+  </div>
+  
+  <div>
+    <label>Email</label><br>
+    <input type="text" formControlName="email">
+  </div>
+
+  <div>
+    <label>Korisnicko ime</label><br>
+    <input type="text" formControlName="username">
+  </div>
+
+  <div>
+    <label>Lozinka</label><br>
+    <input type="text" formControlName="password" >
+  </div> 
+
+  <div>
+    <button (click)="register()">Register</button><br>
+  </div>
+</form>

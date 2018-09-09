@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+      <div class="table-responsive table-bordered movie-table">
+              <table class="table movie-table">
+                    <thead>
+                        <tr>
+                            <td><h3>id</h3></td>
+                            <td><h3>broj racuna</h3></td>
+                            <td><h3>datum otvranja</h3></td></tr>
+                </thead>   
+                <tbody>
+                    <tr *ngFor="let racun of racuni;let i = index">
+                        <td><h3>{{racun.id}}</h3></td>
+                        <td><h3>{{racun.broj_racuna}}</h3></td>
+                        <td><h3>{{racun.datum_otvaranja}}</h3></td>
+                    </tr>
+                </tbody>
+              </table>
+              </div>
+    </div>
+  </div>
+
+<form [formGroup]="racunPravnihLica">
+
+  <div class="default-input">
+    <label >Broj racuna</label><br>
+    <input formControlName="broj_racuna">
+  </div>
+  
+  <div class="default-input">
+    <label >Datum otvaranja</label><br>
+    <input formControlName="datum_otvaranja" type="date">
+  </div>
+  
+  <div class="default-input">
+    <label >Klijent</label><br>
+    <select formControlName="vlasnik_racuna">
+        <option *ngFor="let klijent of klijenti" value="{{klijent.id}}" >{{klijent.naziv_klijenta}}</option>
+    </select>
+  </div>
+  
+  <div class="default-input">
+    <label >Poslovna banka</label><br>
+    <select formControlName="poslovna_banka">
+        <option *ngFor="let banka of banke" value="{{banka.id}}" >{{banka.naziv}}</option>
+    </select>
+  </div>
+  
+  <div class="default-input">
+    <label >Valuta</label>
+    <select formControlName="valuta"><br>
+        <option *ngFor="let valuta of valute" value="{{valuta.id}}" >{{valuta.naziv}}</option>
+    </select>
+  </div>
+
+  <button (click)="dodaj()">Dodaj racun</button>
+
+</form>
+
+<div>
+    <div class="default-input">
+        <h1 >Odaberi racun</h1>
+        <select [(ngModel)]="odabraniKlijent">
+            <option *ngFor="let racun of racuni" value="{{racun.id}}" >{{racun.broj_racuna}}</option>
+        </select>
+      </div>
+  <h1>Pdf report za klijenta </h1>od:  <input type="date" [(ngModel)]="datumod">  do:<input type="date" [(ngModel)]="datumdo">
+  <button (click)="generisiPDF()">Generisi</button>
+</div>

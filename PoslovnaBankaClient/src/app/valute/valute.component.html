@@ -1,0 +1,43 @@
+<html>
+  <head>
+
+
+  </head>
+
+  <body>
+
+    <form [formGroup]="valute">
+
+    <div style="border: 1px solid blue; padding: 10px;" class="col-md-4">
+
+        <div class="default-input">
+            <label >Zvanicna sifra</label><br>
+            <input formControlName="zvanicna_sifra">
+        </div>
+
+        <div class="default-input">
+            <label >Naziv</label><br>
+            <input formControlName="naziv">
+        </div>
+
+        <div class="default-input">
+            <label >Domicilna</label><br>
+            <input formControlName="domicilna" type="checkbox">
+        </div>
+
+        <div class="default-input">
+                <label >Drzava</label><br>
+            <select formControlName="drzava">
+                <option *ngFor="let drzava of drzave" value="{{drzava.id}}" >{{drzava.naziv_drzave}}</option>
+            </select>
+        </div>
+
+        <button (click)="sacuvajValutu()">Unesi</button>
+
+    </div>
+
+    </form>
+
+  </body>
+
+</html>

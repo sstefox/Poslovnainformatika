@@ -1,0 +1,77 @@
+ <div class="container">
+      <div class="row">
+        <div class="table-responsive table-bordered movie-table">
+                <table class="table movie-table">
+                      <thead>
+                          <tr class="movie-table-head">
+                              <td><h1>id</h1></td>
+                              <td><h1>Adresa</h1></td>
+                              <td><h1>Email</h1></td>
+                              <td><h1>Maticni broj</h1></td>
+                              <td><h1>Naziv klijenta</h1></td>
+                              <td><h1>PIB</h1></td>
+                              <td><h1>Telefon</h1></td>
+                              <td><h1>Username</h1></td></tr>
+                  </thead>   
+                  <tbody>
+                    <tr *ngFor="let korisnik of korisnici" class="dark-row">
+                        <td><h1>{{korisnik.id}}</h1></td>
+                        <td><h1>{{korisnik.adresa}}</h1></td>
+                        <td><h1>{{korisnik.email}}</h1></td>
+                        <td><h1>{{korisnik.maticni_broj}}</h1></td>
+                        <td><h1>{{korisnik.naziv_klijenta}}</h1></td>
+                        <td><h1>{{korisnik.pib}}</h1></td>
+                        <td><h1>{{korisnik.telefon}}</h1></td>
+                        <td><h1>{{korisnik.username}}</h1></td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+      </div>
+    </div>
+
+<form [formGroup]="registerForm">
+  <div>
+      <label>Naziv klijenta</label><br>
+      <input type="text" formControlName="naziv_klijenta">
+  </div>
+  
+  <div>
+    <label>Email</label><br>
+    <input type="text" formControlName="email">
+  </div>
+
+  <div>
+    <label>Adresa</label><br>
+    <input type="text" formControlName="adresa">
+  </div>
+
+  <div>
+    <label>Telefon</label><br>
+    <input type="text" formControlName="telefon" >
+  </div>
+
+  <div>
+    <label>Maticni broj</label><br>
+    <input type="text" formControlName="maticni_broj" >
+  </div>
+
+  <div>
+    <label>PIB</label><br>
+    <input type="text" formControlName="pib">
+  </div>
+
+  <div>
+    <label>Korisnicko ime</label><br>
+    <input type="text" formControlName="username">
+  </div>
+
+  <div>
+    <label>Lozinka</label><br>
+    <input type="text" formControlName="password" >
+  </div> 
+
+  <div>
+    <button (click)="register()">Unesi</button><br>
+  </div>
+</form>

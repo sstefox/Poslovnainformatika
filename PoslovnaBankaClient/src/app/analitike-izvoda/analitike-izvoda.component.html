@@ -1,0 +1,137 @@
+<html>
+  <head>
+
+
+  </head>
+
+  <body>
+
+        <div class="container">
+                <div class="row">
+                  <div class="table-responsive table-bordered movie-table">
+                          <table class="table movie-table">
+                                <thead>
+                                    <tr class="movie-table-head">
+                                        <td><h3>id</h3></td>
+                                        <td><h3>Adresa</h3></td>
+                                        <td><h3>Email</h3></td>
+                                        <td><h3>Maticni broj</h3></td>
+                                        <td><h3>Naziv klijenta</h3></td>
+                                        <td><h3>PIB</h3></td>
+                                        <td><h3>Telefon</h3></td>
+                                        <td><h3>Username</h3></td></tr>
+                            </thead>   
+                            <tbody>
+                              <tr *ngFor="let analitika of analitike" class="dark-row">
+                                  <td><h3>{{analitika.id}}</h3></td>
+                                  <td><h3>{{analitika.datum_prijema}}</h3></td>
+                                  <td><h3>{{analitika.duznik}}</h3></td>
+                                  <td><h3>{{analitika.iznos}}</h3></td>
+                                  <td><h3>{{analitika.poverilac}}</h3></td>
+                                  <td><h3>{{analitika.racun_duznika}}</h3></td>
+                                  <td><h3>{{analitika.racun_poverioca}}</h3></td>
+                                  <td><h3>{{analitika.svrha_placanja}}</h3></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          </div>
+                </div>
+              </div>
+
+    <form [formGroup]="analitikeIzvoda">
+
+    <div style="border: 1px solid blue; padding: 10px;" class="col-md-4">
+        <div class="default-input">
+            <label >Broj stavke</label><br>
+            <input formControlName="broj_stavke">
+        </div>
+        <div class="default-input">
+            <label >Duznik</label><br>
+            <input formControlName="duznik">
+        </div>
+        <div class="default-input">
+            <label >Svrha placanja</label><br>
+            <input formControlName="svrha_placanja">
+        </div>
+        <div class="default-input">
+            <label >Poverilac</label><br>
+            <input formControlName="poverilac">
+        </div>
+        <div class="default-input">
+            <label >Datum prijema</label><br>
+            <input formControlName="datum_prijema" type="date" >
+        </div>
+        <div class="default-input">
+            <label >Datum valute</label><br>
+            <input formControlName="datum_valute" type="date">
+        </div>
+        <div class="default-input">
+            <label >Racun duznika</label><br>
+            <select formControlName="racun_duznika">
+                <option *ngFor="let racun of racuni" value="{{racun.broj_racuna}}" >{{racun.broj_racuna}}</option>
+            </select>
+        </div>
+        <div class="default-input">
+            <label >Model zaduzenja</label><br>
+            <input formControlName="model_zaduzenja">
+        </div>
+        <div class="default-input">
+            <label >Poziv na broj zaduzenja</label><br>
+            <input formControlName="poziv_na_broj_zaduzenja">
+        </div>
+        <div class="default-input">
+            <label >Racun poverioca</label><br>
+            <select formControlName="racun_poverioca">
+                <option *ngFor="let racun of racuni" value="{{racun.broj_racuna}}" >{{racun.broj_racuna}}</option>
+            </select>
+        </div>
+        <div class="default-input">
+            <label >Model odobrenja</label><br>
+            <input formControlName="model_odobrenja">
+        </div>
+        <div class="default-input">
+            <label >Poziv na broj odobrenja</label><br>
+            <input formControlName="poziv_na_broj_odobrenja">
+        </div>
+        <div class="default-input">
+            <label >Hitno</label><br>
+            <input type="checkbox" formControlName="hitno">
+        </div>
+        <div class="default-input">
+            <label >Iznos</label><br>
+            <input formControlName="iznos">
+        </div>
+
+        <div class="default-input">
+            <label >Vrsta placanja</label><br>
+            <input formControlName="vrste_placanja">
+        </div>
+
+        <div class="default-input">
+            <label >Naseljeno mesto</label><br>
+            <select formControlName="naseljeno_mesto">
+                <option *ngFor="let mesto of mesta" value="{{mesto.id}}" >{{mesto.naziv}}</option>
+            </select>
+        </div>
+
+        <div class="default-input">
+            <label >Valuta</label><br>
+            <select formControlName="valuta">
+                <option *ngFor="let valuta of valute" value="{{valuta.id}}" >{{valuta.naziv}}</option>
+            </select>
+        </div>
+
+    
+
+        <button (click)="izvrsiTransfer()">Potvrdi</button>
+        <button (click)="izvrsiKliring()">Izvrsi kliring</button>
+        
+    </div>
+
+    </form>
+
+    <input type="file" (change)="fileChangeEvent($event.target.files)">
+    
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+  <head>
+
+
+  </head>
+
+  <body>
+
+        <div class="container">
+                <div class="row">
+                  <div class="table-responsive table-bordered movie-table">
+                          <table class="table movie-table">
+                                <thead>
+                                    <tr class="movie-table-head">
+                                        <td><h3>id</h3></td>
+                                        <td><h3>Datum prometa</h3></td>
+                                        <td><h3>Novo stanje</h3></td>
+                                        <td><h3>Prethodno stanje</h3></td>
+                                        <td><h3>Promet na teret</h3></td>
+                                        <td><h3>Promet u korist</h3></td>
+                            </thead>   
+                            <tbody>
+                              <tr *ngFor="let stanje of stanja" class="dark-row">
+                                  <td><h3>{{stanje.id}}</h3></td>
+                                  <td><h3>{{stanje.datum_prometa}}</h3></td>
+                                  <td><h3>{{stanje.novo_stanje}}</h3></td>
+                                  <td><h3>{{stanje.prethodno_stanje}}</h3></td>
+                                  <td><h3>{{stanje.promet_na_teret}}</h3></td>
+                                  <td><h3>{{stanje.promet_u_korist}}</h3></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          </div>
+                </div>
+              </div>
+
+  </body>
+
+</html>

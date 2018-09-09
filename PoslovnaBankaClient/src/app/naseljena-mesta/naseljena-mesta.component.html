@@ -1,0 +1,43 @@
+<html>
+  <head>
+
+
+  </head>
+
+  <body>
+
+    <form [formGroup]="naseljenaMesta">
+
+    <div style="border: 1px solid blue; padding: 10px;" class="col-md-4">
+
+        <div class="default-input">
+            <label >Sifra mesta</label><br>
+            <input formControlName="sifra_mesta">
+        </div>
+
+        <div class="default-input">
+            <label >Naziv</label><br>
+            <input formControlName="naziv">
+        </div>
+
+        <div class="default-input">
+            <label >Ptt oznaka</label><br>
+            <input formControlName="ptt_oznaka">
+        </div>
+
+        <div class="default-input">
+                <label >Drzava</label><br>
+            <select formControlName="drzava">
+                <option *ngFor="let drzava of drzave" value="{{drzava.id}}" >{{drzava.naziv_drzave}}</option>
+            </select>
+        </div>
+
+    </div>
+
+    <button (click)="dodajMesto()">Dodaj</button>
+
+    </form>
+
+  </body>
+
+</html>

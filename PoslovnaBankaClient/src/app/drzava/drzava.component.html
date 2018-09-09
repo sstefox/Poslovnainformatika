@@ -1,0 +1,54 @@
+<html>
+  <head>
+
+
+  </head>
+
+  <body>
+
+        <div class="container">
+                <div class="row">
+                  <div class="table-responsive table-bordered movie-table">
+                          <table class="table movie-table">
+                                <thead>
+                                    <tr class="movie-table-head">
+                                        <td><h3>id</h3></td>
+                                        <td><h3>Naziv drzave</h3></td>
+                                        <td><h3>Sifra drzave</h3></td>
+                            </thead>   
+                            <tbody>
+                              <tr *ngFor="let drzava of drzave" class="dark-row">
+                                  <td><h3>{{drzava.id}}</h3></td>
+                                  <td><h3>{{drzava.naziv_drzave}}</h3></td>
+                                  <td><h3>{{drzava.sifra_drzave}}</h3></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          </div>
+                </div>
+              </div>
+
+    <form [formGroup]="drzava">
+
+    <div style="border: 1px solid blue; padding: 10px;" class="col-md-4">
+
+        <div class="default-input">
+            <label >Sifra drzave</label><br>
+            <input formControlName="sifra_drzave">
+        </div>
+
+        <div class="default-input">
+            <label >Naziv drzave</label><br>
+            <input formControlName="naziv_drzave">
+        </div>
+
+
+        <button (click)="unesiDrzavu()">Unesi</button>
+
+    </div>
+
+    </form>
+
+  </body>
+
+</html>

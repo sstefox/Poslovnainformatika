@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+      <div class="table-responsive table-bordered movie-table">
+              <table class="table movie-table">
+                    <thead>
+                        <tr><td><h1>id</h1></td>
+                          <td><h3>Banka Posiljalac</h3></td>
+                          <td><h3>Banka Primalac</h3></td>
+                          <td><h3>Datum</h3></td></tr>
+                </thead>   
+                <tbody>
+                    <tr *ngFor="let transfer of transferi;let i = index" class="dark-row">
+                        <td><h3>{{transfer.id}}</h3></td>
+                        <td><h3>{{transfer.bankaPosiljalac.naziv}}</h3></td>
+                        <td><h3>{{transfer.bankaPrimalac.naziv}}</h3></td>
+                        <td><h3>{{transfer.datum}}</h3></td>
+                        <td><button (click)="generisiXml(i)">Generisi xml</button></td>
+                    </tr>
+                </tbody>
+              </table>
+              </div>
+    </div>
+  </div>

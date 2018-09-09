@@ -1,0 +1,41 @@
+<html>
+  <head>
+
+
+  </head>
+
+  <body>
+
+    <form [formGroup]="kursnaLista">
+
+    <div style="border: 1px solid blue; padding: 10px;" class="col-md-4">
+
+        <div class="default-input">
+            <label >Datum</label><br>
+            <input formControlName="datum">
+        </div>
+
+        <div class="default-input">
+            <label >Broj kursne liste</label><br>
+            <input formControlName="broj_kursne_liste">
+        </div>
+
+        <div class="default-input">
+            <label >Primenjuje se od</label><br>
+            <input formControlName="primenjuje_se_od">
+        </div>
+
+        <div class="default-input">
+            <label >Banka</label><br>
+            <input formControlName="banka">
+        </div>
+
+        <button>Potvrda</button>
+
+    </div>
+
+    </form>
+
+  </body>
+
+</html>

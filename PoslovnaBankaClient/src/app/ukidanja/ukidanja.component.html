@@ -1,0 +1,40 @@
+<html>
+  <head>
+
+
+  </head>
+
+  <body>
+
+    <form [formGroup]="ukidanja">
+
+    <div style="border: 1px solid blue; padding: 10px;" class="col-md-4">
+
+        <div class="default-input">
+            <label >Datum ukidanja</label>
+            <input formControlName="datum_ukidanja" type="date">
+        </div>
+
+        <div class="default-input">
+            <label >Sredstva se prenose na racun</label>
+            <select formControlName="sredstva_se_prenose_na_racun">
+                <option *ngFor="let racun of racuni" value="{{racun.broj_racuna}}" >{{racun.broj_racuna}}</option>
+            </select>
+        </div>
+
+        <div class="default-input">
+            <label> Racun pravnog lica</label>
+            <select formControlName="ukidanjeRacuna">
+                <option *ngFor="let racun of racuni" value="{{racun.broj_racuna}}" >{{racun.broj_racuna}}</option>
+            </select>
+        </div>
+
+        <button (click)="potvrdiUkidanje()">Potvrda</button>
+
+    </div>
+
+    </form>
+
+  </body>
+
+</html>

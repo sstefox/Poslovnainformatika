@@ -1,0 +1,68 @@
+<html>
+  <head>
+
+
+  </head>
+
+  <body>
+
+    <form [formGroup]="banke">
+
+    <div style="border: 1px solid blue; padding: 10px;" class="col-md-4">
+      <div class="default-input">
+          <label >Sifra banke</label><br>
+          <input formControlName="sifra_banke">
+      </div>
+
+      <div class="default-input">
+          <label >PIB</label><br>
+          <input formControlName="pib">
+      </div>
+
+      <div class="default-input">
+          <label >Naziv</label><br>
+          <input formControlName="naziv">
+      </div>
+
+      <div class="default-input">
+          <label >Aresa</label><br>
+          <input formControlName="adresa"> 
+      </div>
+
+      <div class="default-input">
+          <label >Email</label><br>
+          <input formControlName="email">
+      </div>
+
+      <div class="default-input">
+          <label > Web</label><br>
+          <input formControlName="web">
+      </div>
+
+      <div class="default-input">
+          <label >Telefon</label><br>
+          <input formControlName="telefon">
+      </div>
+
+      <div class="default-input">
+          <label >Fax</label><br>
+          <input formControlName="fax">
+      </div>
+
+      <button (click)="unesiBanku()">Unesi</button>
+    </div>
+
+    </form>
+
+    <div class="default-input">
+            <label >Valuta</label>
+            <select [(ngModel)]="banka">
+                <option *ngFor="let banka of banks" value="{{banka.id}}" >{{banka.naziv}}</option>
+            </select>
+          </div>
+
+          <button (click)="generisiXML()">Generisi XML</button>
+
+  </body>
+
+</html>

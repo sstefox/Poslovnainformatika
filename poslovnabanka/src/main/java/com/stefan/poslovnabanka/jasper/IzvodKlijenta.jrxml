@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IzvodKlijenta" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3896f92-ebcb-49a2-a978-29e3b6bcb943">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<parameter name="racun" class="java.lang.String"/>
+	<parameter name="datum_od" class="java.lang.String"/>
+	<parameter name="datum_do" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select id,datum_prijema,duznik,hitno,iznos,poverilac,racun_duznika,racun_poverioca,svrha_placanja
+from analitika_izvoda where racun_duznika=$P{racun} or racun_poverioca=$P{racun} and datum_prijema between $P{datum_od} and $P{datum_do}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<field name="datum_prijema" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="datum_prijema"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<field name="duznik" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="duznik"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<field name="hitno" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="hitno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<field name="iznos" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="iznos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<field name="poverilac" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="poverilac"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<field name="racun_duznika" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="racun_duznika"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<field name="racun_poverioca" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="racun_poverioca"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<field name="svrha_placanja" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="svrha_placanja"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="analitika_izvoda"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch"/>
+	</title>
+	<columnHeader>
+		<band height="144" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="0" width="100" height="30" uuid="98f9e72f-2a26-48bd-8f66-588308f72e44">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9dda58d2-2794-4cb1-8ab5-ef85d472713d"/>
+				</reportElement>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="0" width="100" height="30" uuid="db7e1268-a579-4bec-82a5-b0f5505b9876">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d166df9b-a630-462e-b6b9-10cd0361d75e"/>
+				</reportElement>
+				<text><![CDATA[datum_prijema]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="30" uuid="6bdb9b9e-5987-474b-9b59-6d7cd306f94b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f7b36986-3127-4ec2-96c1-13f248ea6923"/>
+				</reportElement>
+				<text><![CDATA[duznik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="40" width="100" height="30" uuid="8f7c45b9-d27c-4519-82bd-66a92b090007">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18359ec0-6fce-4461-97b5-c3d6598f3976"/>
+				</reportElement>
+				<text><![CDATA[iznos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="50" width="100" height="30" uuid="e1aa0b53-fad3-4e39-aa58-8ffc874901e5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a007cb99-9eba-4e6e-850a-6fe3adee6cd8"/>
+				</reportElement>
+				<text><![CDATA[poverilac]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="50" width="100" height="30" uuid="3303875c-b689-4219-ab78-772fa6a689cc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="45f5ab33-ae85-4a6d-8de6-cfcbaa1cfd4f"/>
+				</reportElement>
+				<text><![CDATA[racun_duznika]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="90" width="100" height="30" uuid="64818b8f-b311-4c15-a98e-8d90dc3d2dd6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d334824-26a2-4e2a-8da1-90cd83b8ce27"/>
+				</reportElement>
+				<text><![CDATA[racun_poverioca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="90" width="100" height="30" uuid="87615692-c32e-49b6-9f25-1fee53aadeb5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="98621e87-ecd0-4338-a9c2-b763ee6bfd55"/>
+				</reportElement>
+				<text><![CDATA[svrha_placanja]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="145" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="0" width="100" height="30" uuid="4f9c0436-ef96-4945-a8d0-b8ed6bd1be00">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9dda58d2-2794-4cb1-8ab5-ef85d472713d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="30" uuid="5f9834ba-17ee-41e7-a66b-d2874d99962e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d166df9b-a630-462e-b6b9-10cd0361d75e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{datum_prijema}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="100" height="30" uuid="5e1e6cf7-7568-4238-b9e9-cd752ac68788">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f7b36986-3127-4ec2-96c1-13f248ea6923"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{duznik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="50" width="100" height="30" uuid="a7cdbbef-00f9-4c24-a10c-2e6c809a684b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18359ec0-6fce-4461-97b5-c3d6598f3976"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{iznos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="50" width="100" height="30" uuid="20ce8d36-2c0b-457f-9386-edbd17fef30f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a007cb99-9eba-4e6e-850a-6fe3adee6cd8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{poverilac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="50" width="100" height="30" uuid="72f0bdce-cf8c-4871-81c0-d247cff13daa">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="45f5ab33-ae85-4a6d-8de6-cfcbaa1cfd4f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{racun_duznika}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="100" width="100" height="30" uuid="8a2c1f81-94d7-481d-90b2-e2387f56273c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d334824-26a2-4e2a-8da1-90cd83b8ce27"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{racun_poverioca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="100" width="100" height="30" uuid="c5f6798f-843a-45fb-890d-dd0959424bb9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="98621e87-ecd0-4338-a9c2-b763ee6bfd55"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{svrha_placanja}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SpisakRacuna" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="adcd61d4-2321-488a-af19-16d8f600557e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ime_banke" class="java.lang.String"/>
+	<field name="broj_racuna" class="java.lang.String"/>
+	<field name="novo_stanje" class="java.lang.String"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="datum" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="230" y="-1" width="100" height="30" uuid="3c17be3c-7a0c-4bbb-9f80-46a95ec36643"/>
+				<text><![CDATA[ime_banke]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="39" width="100" height="30" uuid="19af89d1-f40c-42cf-b128-c4d87dcedddc"/>
+				<textFieldExpression><![CDATA[$F{ime_banke}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="115" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="40" width="100" height="30" uuid="b718bcbb-72a8-4035-8cad-9007da247403"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="30" uuid="82d1cbec-4611-4158-92b6-9d35ba065650"/>
+				<text><![CDATA[id_racuna]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="40" width="100" height="30" uuid="1834e7fe-d3ee-472d-b35d-d0d6ebfee400"/>
+				<textFieldExpression><![CDATA[$F{broj_racuna}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="30" uuid="70784989-258c-448d-b381-cc7ac498e8c8"/>
+				<text><![CDATA[broj_racuna]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="40" width="100" height="30" uuid="865d1137-1d00-4587-bb2c-4475902f709b"/>
+				<textFieldExpression><![CDATA[$F{novo_stanje}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="30" uuid="dd98761f-a2ba-4f74-9902-00b275332062"/>
+				<text><![CDATA[stanje]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="40" width="100" height="30" uuid="ddc94e4f-3d83-49cb-89ef-94e020908e96"/>
+				<textFieldExpression><![CDATA[$F{datum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="0" width="100" height="30" uuid="00712429-a615-4e67-9bb7-82d2d137ce22"/>
+				<text><![CDATA[datum_prometa]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
